@@ -88,3 +88,32 @@ See docstrings for `is_script()`.
 
 See docstrings for `get_scripts()`.
 
+### Get the count of characters in each script
+
+```python
+>>> from uniscripts import get_script_counts
+
+>>> get_script_counts("こんにちは")
+{'Hiragana': 5}
+
+>>> get_script_counts("チョコレート")
+{'Bopomofo': 1, 'Common': 1, 'Han': 1, 'Hangul': 1, 'Hiragana': 1, 'Katakana': 1, 'Yi': 1}
+
+>>> get_script_counts("ਚਾਕਲੇਟ")
+{'Gurmukhi': 6}
+
+>>> get_script_counts("초콜릿")
+{'Hangul': 4}
+
+>>> get_script_counts("σοκολάτα")
+{'Greek': 8}
+
+>>> get_script_counts("شوكولاتة")
+{'Arabic': 8}
+
+>>> get_script_counts("chocolat")
+{'Common': 1, 'Latin': 8}
+
+```
+
+See docstrings for `get_script_counts()`.

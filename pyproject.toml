@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "uniscripts"
+version = "import __unicode_version__ from unidata.py"
+description = "Obtain name of Unicode scripts used in text"
+authors = ["Leonardo Boiko <leoboiko@namakajiri.net>", "Gaspard Petit <gaspardpetit@gmail.com>", "Aldan Creo <os@acmc.fyi>"]
+license = "CC0-1.0"
+readme = "README.md"
+homepage = "https://github.com/leoboiko/uniscripts"
+keywords = ["unicode", "script", "scripts", "uax24", "hiragana", "katakana", "kanji", "han"]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+
+[tool.poetry.dev-dependencies]
+# No dependencies
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
