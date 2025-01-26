@@ -8,6 +8,8 @@ from uniscripts.unidata import BUCKETS_000000_010000, BUCKETS_010000_110000
 from uniscripts.unidata import SCRIPT_ABBREVS, Scripts, __unicode_version__
 __version__ = __unicode_version__
 
+from collections import Counter
+
 
 # pylint: disable=dangerous-default-value
 def is_script(string:str, script:str, ignore=['Inherited', 'Common', 'Unknown']) -> bool:
@@ -113,6 +115,30 @@ def get_scripts(text:str) -> {}:
     
     """
     return {elem for x in text for elem in which_scripts(x)}
+
+
+def get_script_counts(text:str) -> {}:
+    """Returns: dictionary of script counts in text.
+
+    >>> get_script_counts("こんにちは")
+    {'Hiragana': 5}
+    >>> get_script_counts("チョコレート")
+    {'Bopomofo': 1, 'Common': 1, 'Han': 1, 'Hangul': 1, 'Hiragana': 1, 'Katakana': 1, 'Yi': 1}
+    >>> get_script_counts("ਚਾਕਲੇਟ")
+    {'Gurmukhi': 6}
+    >>> get_script_counts("초콜릿")
+    {'Hangul': 4}
+    >>> get_script_counts("σοκολάτα")
+    {'Greek': 8}
+    >>> get_script_counts("شوكولاتة")
+    {'Arabic': 8}
+    >>> get_script_counts("chocolat")
+    {'Common': 1, 'Latin': 8}
+    """
+    counter = Counter()
+    for x in text:
+        counter.update(which_scripts(x))
+    return dict(counter)
 
 
 if __name__ == "__main__":
