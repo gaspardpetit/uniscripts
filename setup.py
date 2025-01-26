@@ -36,8 +36,8 @@ setup(
     url='https://github.com/leoboiko/uniscripts',
 
     # Author details
-    author='Leonardo Boiko',
-    author_email='leoboiko@namakajiri.net',
+    author='Leonardo Boiko, Aldan Creo, Gaspard Petit',
+    author_email='leoboiko@namakajiri.net, os@acmc.fyi, gaspardpetit@gmail.com',
 
     # Choose your license
     license='CC0 1.0 Universal (CC0 1.0) Public Domain Dedication',
