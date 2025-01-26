@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "uniscripts"
-version = "import __unicode_version__ from unidata.py"
+version = "2.0.0"
 description = "Obtain name of Unicode scripts used in text"
 authors = ["Leonardo Boiko <leoboiko@namakajiri.net>", "Gaspard Petit <gaspardpetit@gmail.com>", "Aldan Creo <os@acmc.fyi>"]
 license = "CC0-1.0"
